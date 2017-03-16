@@ -17,5 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         String url = "https://pranavj1001.github.io";
 
+        webScreen.loadUrl(url);
+
     }
 }
