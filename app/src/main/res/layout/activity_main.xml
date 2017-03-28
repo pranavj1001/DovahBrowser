@@ -12,43 +12,75 @@
         android:weightSum="10"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_alignParentEnd="true"
+                android:id="@+id/goToThisLinkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GO!"/>
+
+            <EditText
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/urlContentEditText"
+                android:layout_toLeftOf="@id/goToThisLinkButton"/>
+
+        </RelativeLayout>
+
         <WebView
             android:id="@+id/webScreen"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="8" />
 
-    <LinearLayout
+    <GridLayout
         android:id="@+id/layoutButtonBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:rowCount="1"
+        android:columnCount="4">
 
         <Button
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back" />
+            android:text="Back"
+            android:layout_row="0"
+            android:layout_column="0"/>
 
         <Button
             android:id="@+id/refreshButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Refresh" />
+            android:text="Refresh"
+            android:layout_row="0"
+            android:layout_column="1"/>
 
         <Button
             android:id="@+id/stopButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stop" />
+            android:text="Stop"
+            android:layout_row="0"
+            android:layout_column="2"/>
 
         <Button
             android:id="@+id/forwardButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forward" />
-    </LinearLayout>
+            android:text="Forward"
+            android:layout_row="0"
+            android:layout_column="3"/>
+    </GridLayout>
 
 
     </LinearLayout>
