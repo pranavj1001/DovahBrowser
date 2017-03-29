@@ -1,9 +1,5 @@
 package com.learning.pranavjain.dovahbrowser;
 
-/**
- * Created by Pranav Jain on 3/25/2017.
- */
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +7,10 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+/**
+ * Created by Pranav Jain on 3/25/2017.
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         forwardButton = (Button) findViewById(R.id.forwardButton);
 
         //setup a webView Client
-
+        //so that the links open in our webView only and not in another browser
         webScreen.setWebViewClient(new webScreenClient());
 
         goToThisLinkButton.setOnClickListener(new View.OnClickListener() {
