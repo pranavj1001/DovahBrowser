@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/urlContentEditText"
-                android:layout_toLeftOf="@id/goToThisLinkButton"/>
+                android:layout_toLeftOf="@id/goToThisLinkButton" />
 
         </RelativeLayout>
 
@@ -64,18 +64,19 @@
             android:layout_toRightOf="@id/backButton" />
 
         <Button
+            android:id="@+id/forwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forward"
+            android:layout_alignParentEnd="true"/>
+
+        <Button
             android:id="@+id/stopButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Stop"
             android:layout_toLeftOf="@id/forwardButton"/>
 
-        <Button
-            android:id="@+id/forwardButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forward"
-            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
 
