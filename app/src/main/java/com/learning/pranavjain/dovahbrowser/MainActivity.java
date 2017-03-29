@@ -40,7 +40,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String userEnterredUrlValue = urlContentEditText.getText().toString();
                 try{
+                    //URL Fixer
                     if (!(userEnterredUrlValue.isEmpty())) {
+                        if(!(userEnterredUrlValue.startsWith("https://www") || userEnterredUrlValue.startsWith("http://www"))){
+                            userEnterredUrlValue = "https://www" + userEnterredUrlValue;
+                        }else if(userEnterredUrlValue.startsWith("www")){
+                            userEnterredUrlValue = "https://" + userEnterredUrlValue;
+                        }
                         webScreen.loadUrl(userEnterredUrlValue);
                     }else {
                         Toast.makeText(getApplicationContext(), "Please Enter the URL", Toast.LENGTH_SHORT).show();
