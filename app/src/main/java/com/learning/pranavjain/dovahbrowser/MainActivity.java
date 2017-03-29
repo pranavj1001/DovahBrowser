@@ -29,6 +29,22 @@ public class MainActivity extends AppCompatActivity {
         stopButton = (Button) findViewById(R.id.stopButton);
         forwardButton = (Button) findViewById(R.id.forwardButton);
 
+        goToThisLinkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userEnterredUrlValue = urlContentEditText.getText().toString();
+                try{
+                    if (!(userEnterredUrlValue.isEmpty())) {
+                        webScreen.loadUrl(userEnterredUrlValue);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Please Enter the URL", Toast.LENGTH_SHORT).show();
+                    }
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Please Enter Correct URL", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         String defaultUrl = "https://pranavj1001.github.io";
         webScreen.loadUrl(defaultUrl);
 
