@@ -9,6 +9,7 @@ import android.webkit.WebViewClient;
 
 public class webScreenClient extends WebViewClient {
 
+    @SuppressWarnings("deprecation")//to ignore deprecation related warnings
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         view.loadUrl(url);
