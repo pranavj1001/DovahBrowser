@@ -2,6 +2,7 @@ package com.learning.pranavjain.dovahbrowser;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -43,10 +44,13 @@ public class MainActivity extends AppCompatActivity {
                     //URL Fixer
                     if (!(userEnterredUrlValue.isEmpty())) {
                         if(!(userEnterredUrlValue.startsWith("https://www") || userEnterredUrlValue.startsWith("http://www"))){
-                            userEnterredUrlValue = "https://www" + userEnterredUrlValue;
+                            //Log.v("URL Fixer", "no http:// found " + userEnterredUrlValue);
+                            userEnterredUrlValue = "https://www." + userEnterredUrlValue;
                         }else if(userEnterredUrlValue.startsWith("www")){
+                            //Log.v("URL Fixer", "www found" + userEnterredUrlValue);
                             userEnterredUrlValue = "https://" + userEnterredUrlValue;
                         }
+                        //Log.v("URL Fixer", "Load " + userEnterredUrlValue);
                         webScreen.loadUrl(userEnterredUrlValue);
                     }else {
                         Toast.makeText(getApplicationContext(), "Please Enter the URL", Toast.LENGTH_SHORT).show();
