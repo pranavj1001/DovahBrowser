@@ -44,19 +44,19 @@ public class MainActivity extends AppCompatActivity {
         goToThisLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userEnterredUrlValue = urlContentEditText.getText().toString();
+                String userEnteredUrlValue = urlContentEditText.getText().toString();
                 try{
                     //URL Fixer
-                    if (!(userEnterredUrlValue.isEmpty())) {
-                        if(!(userEnterredUrlValue.startsWith("https://www") || userEnterredUrlValue.startsWith("http://www"))){
-                            //Log.v("URL Fixer", "no http:// found " + userEnterredUrlValue);
-                            userEnterredUrlValue = "https://www." + userEnterredUrlValue;
-                        }else if(userEnterredUrlValue.startsWith("www")){
-                            //Log.v("URL Fixer", "www found" + userEnterredUrlValue);
-                            userEnterredUrlValue = "https://" + userEnterredUrlValue;
+                    if (!(userEnteredUrlValue.isEmpty())) {
+                        if(!(userEnteredUrlValue.startsWith("https://www") || userEnteredUrlValue.startsWith("http://www"))){
+                            //Log.v("URL Fixer", "no http:// found " + userEnteredUrlValue);
+                            userEnteredUrlValue = "https://www." + userEnteredUrlValue;
+                        }else if(userEnteredUrlValue.startsWith("www")){
+                            //Log.v("URL Fixer", "www found" + userEnteredUrlValue);
+                            userEnteredUrlValue = "https://" + userEnteredUrlValue;
                         }
-                        //Log.v("URL Fixer", "Load " + userEnterredUrlValue);
-                        webScreen.loadUrl(userEnterredUrlValue);
+                        //Log.v("URL Fixer", "Load " + userEnteredUrlValue);
+                        webScreen.loadUrl(userEnteredUrlValue);
                     }else {
                         Toast.makeText(getApplicationContext(), "Please Enter the URL", Toast.LENGTH_SHORT).show();
                     }
