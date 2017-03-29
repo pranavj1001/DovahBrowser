@@ -1,9 +1,11 @@
 package com.learning.pranavjain.dovahbrowser;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -57,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                         //Log.v("URL Fixer", "Load " + userEnteredUrlValue);
                         webScreen.loadUrl(userEnteredUrlValue);
+
+                        //Create an instance of InputMethodManager
+                        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        //Hide the keyboard after pressing GO button
+                        inputMethodManager.hideSoftInputFromWindow(urlContentEditText.getWindowToken(), 0);
+
                     }else {
                         Toast.makeText(getApplicationContext(), "Please Enter the URL", Toast.LENGTH_SHORT).show();
                     }
