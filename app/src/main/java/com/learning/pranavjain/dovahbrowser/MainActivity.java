@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         //setup a webView Client
         //so that the links open in our webView only and not in another browser
         webScreen.setWebViewClient(new webScreenClient());
+
+        //Enable JS
+        WebSettings webSettings = webScreen.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
         goToThisLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
