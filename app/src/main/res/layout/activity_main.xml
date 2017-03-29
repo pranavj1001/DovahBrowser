@@ -40,7 +40,7 @@
             android:layout_height="match_parent"
             android:layout_weight="8" />
 
-    <GridLayout
+    <RelativeLayout
         android:id="@+id/layoutButtonBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,33 +54,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
-            android:layout_row="0"
-            android:layout_column="0"/>
+            android:layout_alignParentStart="true"/>
 
         <Button
             android:id="@+id/refreshButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Refresh"
-            android:layout_row="0"
-            android:layout_column="1"/>
+            android:layout_toRightOf="@id/backButton" />
 
         <Button
             android:id="@+id/stopButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Stop"
-            android:layout_row="0"
-            android:layout_column="2"/>
+            android:layout_toLeftOf="@id/forwardButton"/>
 
         <Button
             android:id="@+id/forwardButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forward"
-            android:layout_row="0"
-            android:layout_column="3"/>
-    </GridLayout>
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
 
     </LinearLayout>
