@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         webScreen.setWebViewClient(new webScreenClient());
 
         //Enable JS
-        WebSettings webSettings = webScreen.getSettings();
+        final WebSettings webSettings = webScreen.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
         String defaultUrl = "https://pranavj1001.github.io";
@@ -89,14 +89,16 @@ public class MainActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                if(webScreen.canGoBack()){
+                    webScreen.goBack();
+                }
             }
         });
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+        
             }
         });
 
