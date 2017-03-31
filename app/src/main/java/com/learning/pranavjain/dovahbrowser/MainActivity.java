@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private WebView webScreen;
     private EditText urlContentEditText;
-    private Button goToThisLinkButton, backButton, refreshButton, stopButton, forwardButton;
+    private Button goToThisLinkButton, backButton, refreshButton, clearHistoryButton, forwardButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         goToThisLinkButton = (Button) findViewById(R.id.goToThisLinkButton);
         backButton = (Button) findViewById(R.id.backButton);
         refreshButton = (Button) findViewById(R.id.refreshButton);
-        stopButton = (Button) findViewById(R.id.stopButton);
+        clearHistoryButton = (Button) findViewById(R.id.clearHistoryButton);
         forwardButton = (Button) findViewById(R.id.forwardButton);
 
         //setup a webView Client
@@ -102,10 +102,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        stopButton.setOnClickListener(new View.OnClickListener() {
+        clearHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                webScreen.clearHistory();
             }
         });
 
