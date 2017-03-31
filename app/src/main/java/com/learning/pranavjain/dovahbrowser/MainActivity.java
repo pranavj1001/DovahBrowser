@@ -11,6 +11,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 /**
@@ -23,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText urlContentEditText;
     private Button goToThisLinkButton, backButton, refreshButton, clearHistoryButton, forwardButton;
     protected static ProgressBar progressLoader;
+    protected static RelativeLayout bottomButtonLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bottomButtonLayout = (RelativeLayout) findViewById(R.id.bottomButtonLayout);
         webScreen = (WebView) findViewById(R.id.webScreen);
         urlContentEditText = (EditText) findViewById(R.id.urlContentEditText);
         goToThisLinkButton = (Button) findViewById(R.id.goToThisLinkButton);
@@ -53,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userEnteredUrlValue = urlContentEditText.getText().toString();
-                try{
+                try {
                     //URL Fixer
                     if (!(userEnteredUrlValue.isEmpty())) {
-                        if(!(userEnteredUrlValue.startsWith("https://www") || userEnteredUrlValue.startsWith("http://www"))){
+                        if (!(userEnteredUrlValue.startsWith("https://www") || userEnteredUrlValue.startsWith("http://www"))) {
                             //Log.v("URL Fixer", "no http:// found " + userEnteredUrlValue);
                             userEnteredUrlValue = "https://www." + userEnteredUrlValue;
-                        }else if(userEnteredUrlValue.startsWith("www")){
+                        } else if (userEnteredUrlValue.startsWith("www")) {
                             //Log.v("URL Fixer", "www found" + userEnteredUrlValue);
                             userEnteredUrlValue = "https://" + userEnteredUrlValue;
                         }
@@ -71,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
                         //Hide the keyboard after pressing GO button
                         inputMethodManager.hideSoftInputFromWindow(urlContentEditText.getWindowToken(), 0);
 
-                    }else {
+                    } else {
                         Toast.makeText(getApplicationContext(), "Please Enter the URL", Toast.LENGTH_SHORT).show();
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), "Please Enter Correct URL", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         forwardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(webScreen.canGoForward()){
+                if (webScreen.canGoForward()) {
                     webScreen.goForward();
                 }
             }
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(webScreen.canGoBack()){
+                if (webScreen.canGoBack()) {
                     webScreen.goBack();
                 }
             }
