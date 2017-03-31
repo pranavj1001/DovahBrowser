@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-        
+                webScreen.reload();
             }
         });
 
