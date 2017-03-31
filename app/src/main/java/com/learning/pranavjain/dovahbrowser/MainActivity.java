@@ -10,6 +10,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 /**
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private WebView webScreen;
     private EditText urlContentEditText;
     private Button goToThisLinkButton, backButton, refreshButton, clearHistoryButton, forwardButton;
+    public static ProgressBar progressLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         refreshButton = (Button) findViewById(R.id.refreshButton);
         clearHistoryButton = (Button) findViewById(R.id.clearHistoryButton);
         forwardButton = (Button) findViewById(R.id.forwardButton);
+        progressLoader = (ProgressBar) findViewById(R.id.progressLoader);
 
         //setup a webView Client
         //so that the links open in our webView only and not in another browser
