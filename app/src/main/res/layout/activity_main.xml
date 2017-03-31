@@ -40,6 +40,11 @@
             android:layout_height="match_parent"
             android:layout_weight="8" />
 
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressLoader"/>
+
     <RelativeLayout
         android:id="@+id/layoutButtonBottom"
         android:layout_width="match_parent"

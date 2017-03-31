@@ -15,4 +15,5 @@ public class webScreenClient extends WebViewClient {
         view.loadUrl(url);
         return true;
     }
+
 }
