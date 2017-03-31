@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = webScreen.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
+        String defaultUrl = "https://pranavj1001.github.io";
+        webScreen.loadUrl(defaultUrl);
+
         goToThisLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,9 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        String defaultUrl = "https://pranavj1001.github.io";
-        webScreen.loadUrl(defaultUrl);
 
     }
 }
