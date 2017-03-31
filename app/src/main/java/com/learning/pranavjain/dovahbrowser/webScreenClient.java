@@ -1,6 +1,9 @@
 package com.learning.pranavjain.dovahbrowser;
 
+import android.util.Log;
 import android.view.View;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -22,5 +25,16 @@ public class webScreenClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
         MainActivity.progressLoader.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+        super.onReceivedError(view, request, error);
+        Log.v("Error!", error.toString());
+        if(MainActivity.webScreen.canGoBack()){
+            MainActivity.webScreen.goBack();
+        }else{
+            MainActivity.webScreen.loadUrl("https://pranavj1001.github.io");
+        }
     }
 }

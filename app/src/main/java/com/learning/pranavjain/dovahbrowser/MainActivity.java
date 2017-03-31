@@ -19,10 +19,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private WebView webScreen;
+    protected static WebView webScreen;
     private EditText urlContentEditText;
     private Button goToThisLinkButton, backButton, refreshButton, clearHistoryButton, forwardButton;
-    public static ProgressBar progressLoader;
+    protected static ProgressBar progressLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
