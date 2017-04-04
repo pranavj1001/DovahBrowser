@@ -31,14 +31,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Load all the necessary variables
+        //Relative Layout
         bottomButtonLayout = (RelativeLayout) findViewById(R.id.bottomButtonLayout);
+        //WebView
         webScreen = (WebView) findViewById(R.id.webScreen);
+        //EditText
         urlContentEditText = (EditText) findViewById(R.id.urlContentEditText);
+        //Buttons
         goToThisLinkButton = (Button) findViewById(R.id.goToThisLinkButton);
         backButton = (Button) findViewById(R.id.backButton);
         refreshButton = (Button) findViewById(R.id.refreshButton);
         clearHistoryButton = (Button) findViewById(R.id.clearHistoryButton);
         forwardButton = (Button) findViewById(R.id.forwardButton);
+        //ProgressBar
         progressLoader = (ProgressBar) findViewById(R.id.progressLoader);
 
         //setup a webView Client
@@ -49,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
         final WebSettings webSettings = webScreen.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
+        //Default URL
         String defaultUrl = "https://pranavj1001.github.io";
         webScreen.loadUrl(defaultUrl);
 
+        //When 'Go' Button is clicked
         goToThisLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When 'Forward' Button is clicked
         forwardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When 'Back' Button is clicked
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When 'Refresh' Button is clicked
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When 'Clear History' Button is clicked
         clearHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
