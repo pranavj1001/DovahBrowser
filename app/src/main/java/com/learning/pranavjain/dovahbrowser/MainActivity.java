@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         forwardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Forward", Toast.LENGTH_SHORT).show();
                 if (webScreen.canGoForward()) {
                     webScreen.goForward();
                 }
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Back", Toast.LENGTH_SHORT).show();
                 if (webScreen.canGoBack()) {
                     webScreen.goBack();
                 }
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Refresh", Toast.LENGTH_SHORT).show();
                 webScreen.reload();
             }
         });
@@ -111,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         clearHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Clear History", Toast.LENGTH_SHORT).show();
                 webScreen.clearHistory();
             }
         });
